@@ -25,11 +25,13 @@ ChatMosaic is a web application that allows users to interact with an AI-powered
 
    ```bash
    git clone https://github.com/your-username/ChatMosaic.git
-   cd ChatMosaic
+   cd CHAT
+   
 2. Install dependencies:
    
     ```bash
    npm install
+    
 3. Configure environment variables:
    Create a .env file in the root directory and add the following:
      ```bash
