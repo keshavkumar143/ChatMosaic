@@ -67,7 +67,7 @@ function MainContainer() {
         <div className="flex items-center space-x-2">
           <div className="w-10 h-8 flex items-center justify-center">
             <span>
-              <img src={logo} alt="Logo" />
+              <img src={logo} alt="" />
             </span>
           </div>
           <h1 className="text-blue-800 text-xl font-bold">ChatMosaic</h1>
@@ -127,3 +127,4 @@ function MainContainer() {
 }
 
 export default MainContainer;
+
