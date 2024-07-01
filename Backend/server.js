@@ -9,7 +9,7 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin: 'http://localhost:5173'
+  origin: 'chat-mosaic-app.vercel.app'
 }));
 
 mongoose.connect(process.env.MONGO_URL, {
