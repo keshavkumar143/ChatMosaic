@@ -9,7 +9,7 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin: 'chat-mosaic-app.vercel.app'
+  origin: 'https://chat-mosaic-app.vercel.app'
 }));
 
 mongoose.connect(process.env.MONGO_URL, {
@@ -20,7 +20,6 @@ mongoose.connect(process.env.MONGO_URL, {
 }).catch((err) => {
   console.error('MongoDB connection error:', err);
 });
-
 
 mongoose.connection.on('disconnected', () => {
   console.log('MongoDB disconnected. Attempting to reconnect...');
@@ -67,7 +66,6 @@ app.post('/api/chat', async (req, res) => {
     const response = await result.response;
     const text = response.text();
     
-   
     const newResponse = new Response({
       id: Date.now().toString(),
       question: question,
@@ -102,3 +100,4 @@ const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
