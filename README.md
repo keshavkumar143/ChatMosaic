@@ -19,6 +19,9 @@ ChatMosaic is a web application that allows users to interact with an AI-powered
 - **HTTP Client**: Axios
 - **Styling**: Tailwind CSS
 
+## Deployment 
+   - https://chat-mosaic-app.vercel.app/
+
 ## Installation
 
 1. Clone the repository:
