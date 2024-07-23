@@ -30,7 +30,8 @@ function MainContainer() {
 
     setIsLoading(true);
     try {
-      const response = await axios.post('https://chatmosaic.onrender.com/api/chat', { question: value });
+      const response = await axios.post('http://localhost:8000/api/chat', { question: value });
+     
       const newResponse = {
         id: Date.now(),
         question: value,
@@ -53,7 +54,7 @@ function MainContainer() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://chatmosaic.onrender.com/api/chat/${id}`);
+      await axios.delete(`http://localhost:8000/api/chat/${id}`);
       setResponses(responses.filter(response => response.id !== id));
     } catch (error) {
       setError("Failed to delete response. Please try again.");
@@ -67,7 +68,7 @@ function MainContainer() {
         <div className="flex items-center space-x-2">
           <div className="w-10 h-8 flex items-center justify-center">
             <span>
-              <img src={logo} alt="" />
+              <img src={logo} alt="Logo" />
             </span>
           </div>
           <h1 className="text-blue-800 text-xl font-bold">ChatMosaic</h1>
@@ -127,4 +128,5 @@ function MainContainer() {
 }
 
 export default MainContainer;
+
 
