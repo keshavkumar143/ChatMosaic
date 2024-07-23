@@ -8,10 +8,14 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
+
+// Configure CORS
 app.use(cors({
-  origin: 'https://chat-mosaic-app.vercel.app'
+  origin: 'http://localhost:5173'
 }));
 
+
+// Connect to MongoDB
 mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -65,7 +69,7 @@ app.post('/api/chat', async (req, res) => {
     const result = await chat.sendMessage(question);
     const response = await result.response;
     const text = response.text();
-    
+
     const newResponse = new Response({
       id: Date.now().toString(),
       question: question,
@@ -85,8 +89,12 @@ app.post('/api/chat', async (req, res) => {
 
 app.delete('/api/chat/:id', async (req, res) => {
   try {
-    await Response.findOneAndDelete({ id: req.params.id });
-    res.status(200).json({ message: 'Response deleted successfully' });
+    const result = await Response.findOneAndDelete({ id: req.params.id });
+    if (result) {
+      res.status(200).json({ message: 'Response deleted successfully' });
+    } else {
+      res.status(404).json({ error: 'Response not found' });
+    }
   } catch (error) {
     console.error('Error deleting response:', error);
     res.status(500).json({ 
@@ -96,8 +104,7 @@ app.delete('/api/chat/:id', async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-
