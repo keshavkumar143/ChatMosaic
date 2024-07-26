@@ -9,9 +9,8 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
-// Configure CORS
 app.use(cors({
-  origin: 'http://localhost:5173'
+  origin: 'https://chat-mosaic.vercel.app'
 }));
 
 
