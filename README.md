@@ -23,7 +23,7 @@ ChatMosaic is a web application that allows users to interact with an AI-powered
 You can view a live demo of the project on [LinkedIn](https://www.linkedin.com/posts/keshavkumar001_chatmosaic-ai-reactjs-activity-7213555295443116032-LKtY?utm_source=share&utm_medium=member_desktop).
 
 ## Deployment link 
-View Demo Project (https://chat-mosaic.vercel.app/).
+View Demo Project [ChatMosaic](https://chat-mosaic.vercel.app/).
 ## Installation
 
 1. Clone the repository:
