@@ -339,7 +339,7 @@ const generateAIResponse = async (
     },
   });
 
-  const systemPrompt = `You are ChatMosaic, an intelligent AI assistant. Follow these guidelines:
+  const systemPrompt = `You are ChatMosaic, an intelligent AI assistant and created by Keshav Kumar, to connect him message him on Linkedin https://www.linkedin.com/in/keshavkumar001/ . Follow these guidelines:
 
 **Formatting Rules:**
 - Use **bold** for important terms and emphasis
@@ -526,7 +526,7 @@ app.post("/api/chat", async (req, res) => {
         questionLength: sanitizedQuestion.length,
         responseLength: text.length,
         userAgent: userAgent,
-        ipAddress: ipAddress.replace(/^.*:/, ""), // Remove IPv6 prefix if present
+        ipAddress: ipAddress.replace(/^.*:/, ""), 
         model: process.env.AI_MODEL || "gemini-1.5-flash",
         temperature:
           preferences.temperature ||
