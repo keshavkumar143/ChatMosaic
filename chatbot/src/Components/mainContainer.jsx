@@ -185,7 +185,7 @@ function MainContainer() {
           <div>
             <h1 className="text-2xl font-extrabold tracking-tight leading-tight">ChatMosaic</h1>
             <span className="text-xs text-indigo-400 font-medium">
-              AI-powered Conversations (localhost:8000)
+              AI-powered Conversations
             </span>
           </div>
         </div>
@@ -213,16 +213,16 @@ function MainContainer() {
           <div className="flex h-full items-center justify-center">
             <div className="text-center p-8 rounded-lg max-w-md">
               <h2 className="text-2xl font-semibold mb-3">
-                Welcome to ChatMosaic (Local Development)
+                Welcome to ChatMosaic
               </h2>
               <p className="opacity-70">
                 Ask a question{" "}
                 {isSpeechSupported ? "or use the microphone to speak" : ""}.
                 Your conversations will appear here.
               </p>
-              <p className="mt-2 text-sm p-2 bg-green-100 text-green-800 rounded-md">
+              {/* <p className="mt-2 text-sm p-2 bg-green-100 text-green-800 rounded-md">
                 Connected to localhost:8000
-              </p>
+              </p> */}
               {!isSpeechSupported && (
                 <p className="mt-2 text-sm p-2 bg-yellow-100 text-yellow-800 rounded-md">
                   Note: Voice input is not supported in your browser.
